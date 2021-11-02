@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="img-principal">
+                <img width="300" :src="img" alt="">
+            </div>
+            <div class="addTasks">
+                <input type="text" placeholder="Add a task here" v-model= "newTask" @keyup.enter="add">
+                <button @click= "add">Aggiungi</button>
+                <p class="errore" v-show="errore">Devi inserire una task con un minimo di 10 caratteri per proseguire</p>
+            </div>
+    
+    
+            <div class="tasks" v-if="tasks.length > 0">
+                <div class="item" v-for= "(task,index) in tasks">
+                    {{task}}
+                    <div class="remove">
+                        <i class="fas fa-times" @click= "remove(index)"></i>
+                    </div>
+                </div>
+            </div>
+            <div v-else>
+                <p>Add a simple task todo</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+    background-color: #B0C4DE;
+
+}
+img {
+    margin-bottom: 40px;
+}
+.item {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    line-height: 45px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+}
+.fas {
+    cursor: pointer;
+}
+.addTasks > p {
+    color: red;
+}
+.container {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+.tasks {
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 30px;
+}
+input {
+    width: 400px;
+    height: 30px;
+    border-radius: 10px;
+}
+button {
+    height: 35px;
+    width: 100px;
+    border-radius: 10px;
+
+}
