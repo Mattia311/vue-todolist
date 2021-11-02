@@ -29,22 +29,15 @@ const app = new Vue ({
             'fare il bucato',
           
         ],
-        trashed: "",
+        trashed: [],
         errore: false
     },
     methods: {
-        remove (i) {
+        remove (i,task) {
            this.tasks.splice(i,1)
-
-
-           if (this.tasks.splice(i,1)) {
-            this.tasks.push(this.trashed)
-           }
-
-           
-            
+           this.trashed.push(task)
         },
-
+        
         add () {
             console.log('aggiungi');
             if(this.newTask != '' && this.newTask.length > 10){
@@ -52,10 +45,25 @@ const app = new Vue ({
                 this.errore = false
             } else {
                 this.errore = true
+                
+            }
+            
+            this.newTask = ''
+            
+        },
+        
+        addAgain (){
+            console.log('rimetti');
+            this.tasks.push(this.trashed)
 
+        },
+
+        completed() {
+            if(tasks.length > 6) {
+                alert('ciao')
+        
             }
 
-            this.newTask = ''
         }
     }
 })
