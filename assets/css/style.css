@@ -30,6 +30,7 @@ img {
     margin-top: 30px;
     padding: 30px;
     width: 400px;
+    height: 100%;
 }
 input {
     width: 400px;
@@ -62,7 +63,7 @@ h2 {
 .trasheds {
     background-color: white;
     width: 330px;
-    height: 200px;
+    height: 100%;
     margin-top: 30px;
     padding: 30px;
     border-radius: 10px;

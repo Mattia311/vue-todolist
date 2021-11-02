@@ -30,6 +30,7 @@ const app = new Vue ({
           
         ],
         trashed: [],
+        completed:"",
         errore: false
     },
     methods: {
@@ -40,7 +41,7 @@ const app = new Vue ({
         
         add () {
             console.log('aggiungi');
-            if(this.newTask != '' && this.newTask.length > 10){
+            if(this.newTask != '' && this.newTask.length >= 10){
                 this.tasks.push(this.newTask)
                 this.errore = false
             } else {
@@ -52,18 +53,11 @@ const app = new Vue ({
             
         },
         
-        addAgain (){
+        addAgain (i,task){
             console.log('rimetti');
-            this.tasks.push(this.trashed)
+            this.trashed.splice(i,1)
+            this.tasks.unshift(task)
 
         },
-
-        completed() {
-            if(tasks.length > 6) {
-                alert('ciao')
-        
-            }
-
-        }
     }
 })
