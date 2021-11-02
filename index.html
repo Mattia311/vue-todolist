@@ -14,27 +14,44 @@
 <body>
     <div id="app">
         <div class="container">
-            <div class="img-principal">
-                <img width="300" :src="img" alt="">
-            </div>
-            <div class="addTasks">
-                <input type="text" placeholder="Add a task here" v-model= "newTask" @keyup.enter="add">
-                <button @click= "add">Aggiungi</button>
-                <p class="errore" v-show="errore">Devi inserire una task con un minimo di 10 caratteri per proseguire</p>
-            </div>
-    
-    
-            <div class="tasks" v-if="tasks.length > 0">
-                <div class="item" v-for= "(task,index) in tasks">
-                    {{task}}
-                    <div class="remove">
-                        <i class="fas fa-times" @click= "remove(index)"></i>
-                    </div>
+            <div>
+                <div class="img-principal">
+                    <img width="300" :src="img" alt="">
+                </div>
+                <div class="addTasks">
+                    <input type="text" placeholder="Add a task here" v-model= "newTask" @keyup.enter="add">
+                    <button @click= "add">Aggiungi</button>
+                    <p class="errore" v-show="errore">Devi inserire una task con un minimo di 10 caratteri per proseguire</p>
                 </div>
             </div>
-            <div v-else>
-                <p>Add a simple task todo</p>
+
+            <div class="main">
+                <div class="tasks" v-if="tasks.length > 0">
+                    <h2>Todo List</h2>
+                    <div class="item" v-for= "(task,index) in tasks">
+                        {{task}}
+                        <div class="remove">
+                            <i class="fas fa-times" @click= "remove(index)"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="complete">
+                    <h2>Completed</h2>
+    
+                </div>
+                <div class="trashed">
+                    <h2>Trashed( <a href="Empty bin">Empty bin</a>)</h2>
+                    <div class="addItemRemove">
+
+                    </div>
+
+                </div>
+                <div v-else>
+                    <p>Add a simple task todo</p>
+                </div>
             </div>
+    
+    
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

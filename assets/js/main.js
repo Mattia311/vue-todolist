@@ -29,11 +29,20 @@ const app = new Vue ({
             'fare il bucato',
           
         ],
+        trashed: "",
         errore: false
     },
     methods: {
         remove (i) {
-            this.tasks.splice(i,1)
+           this.tasks.splice(i,1)
+
+
+           if (this.tasks.splice(i,1)) {
+            this.tasks.push(this.trashed)
+           }
+
+           
+            
         },
 
         add () {
